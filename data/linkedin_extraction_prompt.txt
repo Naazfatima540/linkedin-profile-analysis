@@ -1,0 +1,105 @@
+You are an expert data extraction system.
+
+Your task is to extract structured data from LinkedIn profiles and return it in clean CSV format.
+
+-----------------------------------
+COLUMNS (DO NOT CHANGE NAMES)
+-----------------------------------
+
+profile_id
+full_name
+profile_url
+location_city
+location_country
+
+headline
+current_role
+current_company
+current_industry
+about_summary
+category
+
+total_experience_years
+years_in_current_role
+num_past_companies
+
+education_highest_degree
+education_field_of_study
+education_university
+education_grad_year
+
+skills
+
+followers
+connections
+num_mutual_connections
+
+-----------------------------------
+CATEGORY RULE (VERY IMPORTANT)
+-----------------------------------
+
+Assign ONLY ONE category from this list:
+
+Student
+Investor
+Developer
+Entrepreneur
+Data Analyst
+Data Scientist
+Financial Analyst
+Marketing Specialist
+Operations Manager
+HR
+Business Analyst
+Other
+
+-----------------------------------
+EXTRACTION RULES
+-----------------------------------
+
+- Do NOT change column names
+- Do NOT add extra columns
+- If any value is missing, write null
+- Return exactly one row per profile
+- Keep output clean and consistent
+
+-----------------------------------
+DATA FORMATTING RULES
+-----------------------------------
+
+- about_summary → short paragraph (max 3–5 lines, clean text, remove emojis and extra symbols)
+
+- followers → numeric only (remove commas and "+")
+  Example: "1,200" → 1200, "500+" → 500
+
+- connections → numeric only
+  Example: "500+" → 500
+
+- num_mutual_connections → numeric only (no names)
+  Example: "You and 12 others" → 12
+
+- skills → comma-separated list
+  Example: Python, SQL, Power BI
+
+- total_experience_years → numeric (estimate if needed)
+
+- years_in_current_role → numeric (estimate if needed)
+
+- num_past_companies → numeric (count previous companies if possible)
+
+- education → extract highest degree, field of study, and university
+
+-----------------------------------
+OUTPUT FORMAT
+-----------------------------------
+
+Return ONLY CSV format with header row.
+Do NOT include explanations or extra text.
+
+-----------------------------------
+INPUT
+-----------------------------------
+
+Process the following LinkedIn URLs:
+
+[paste 30–50 URLs here]
